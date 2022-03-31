@@ -8,6 +8,7 @@
         <module>cloudalibaba-nacos-9002</module>
         <module>cloudalibaba-consumer-nacos-8083</module>
         <module>cloudalibaba-config-3377</module>
+        <module>cloudalibaba-sentinel-8401</module>
     </modules>
 
     <parent>
