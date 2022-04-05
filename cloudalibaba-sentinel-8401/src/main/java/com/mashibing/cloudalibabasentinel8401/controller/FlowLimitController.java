@@ -42,4 +42,12 @@ public class FlowLimitController {
         return "----testC";
     }
 
+    @GetMapping("/testD")
+    public String testD(Integer id) {
+        if (id != null && id > 1) {
+            throw new RuntimeException("异常比例测试");
+        }
+        return "------------testD";
+    }
+
 }
