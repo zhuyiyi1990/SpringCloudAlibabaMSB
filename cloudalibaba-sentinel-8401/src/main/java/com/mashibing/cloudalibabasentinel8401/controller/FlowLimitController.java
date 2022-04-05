@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 @RestController
 @Slf4j
 public class FlowLimitController {
@@ -28,6 +30,16 @@ public class FlowLimitController {
     @GetMapping("/testB")
     public String testB() {
         return testService.common();
+    }
+
+    @GetMapping("/testC")
+    public String testC() {
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "----testC";
     }
 
 }
