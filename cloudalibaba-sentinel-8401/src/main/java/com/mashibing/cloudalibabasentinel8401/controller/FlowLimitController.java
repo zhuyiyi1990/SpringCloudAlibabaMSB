@@ -50,4 +50,12 @@ public class FlowLimitController {
         return "------------testD";
     }
 
+    @GetMapping("/testE")
+    public String testE(Integer id) {
+        if (id != null && id > 1) {
+            throw new RuntimeException("异常数测试");
+        }
+        return "------------testE";
+    }
+
 }
