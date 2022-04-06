@@ -9,6 +9,10 @@
         <module>cloudalibaba-consumer-nacos-8083</module>
         <module>cloudalibaba-config-3377</module>
         <module>cloudalibaba-sentinel-8401</module>
+        <module>cloudalibaba-commons</module>
+        <module>cloudalibaba-provider-9003</module>
+        <module>cloudalibaba-provider-9004</module>
+        <module>cloudalibaba-consumer-8084</module>
     </modules>
 
     <parent>
