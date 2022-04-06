@@ -64,6 +64,9 @@ public class FlowLimitController {
     @GetMapping("/testHotKey")
     @SentinelResource(value = "testHotKey", blockHandler = "handler_HotKey")
     public String testHotKey(@RequestParam(value = "hot1", required = false) String hot1, @RequestParam(value = "hot2", required = false) String hot2, @RequestParam(value = "hot13", required = false) String hot3) {
+        if ("6".equals(hot1)) {
+            throw new RuntimeException("运行时异常");
+        }
         return "----testHotKey";
     }
 
