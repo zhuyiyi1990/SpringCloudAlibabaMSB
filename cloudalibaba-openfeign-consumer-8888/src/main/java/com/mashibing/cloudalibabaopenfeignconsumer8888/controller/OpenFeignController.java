@@ -18,4 +18,9 @@ public class OpenFeignController {
         return openFeignService.msbSql(id);
     }
 
+    @GetMapping("/testTimeout")
+    public String TestTimeout() {
+        return openFeignService.timeOut();
+    }
+
 }
