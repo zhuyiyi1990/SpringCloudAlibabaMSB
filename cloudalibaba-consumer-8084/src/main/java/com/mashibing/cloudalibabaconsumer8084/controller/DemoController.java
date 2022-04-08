@@ -3,6 +3,7 @@ package com.mashibing.cloudalibabaconsumer8084.controller;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.mashibing.cloudalibabacommons.entity.JsonResult;
+import com.mashibing.cloudalibabaconsumer8084.service.FeignService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,6 +22,9 @@ public class DemoController {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private FeignService feignService;
 
     @GetMapping("/consumer/fallback/{id}")
     //添加SentinelResource注解的fallback属性，同时设置方法来解决Java异常
@@ -46,6 +50,14 @@ public class DemoController {
     public JsonResult<String> blockHandler(Long id, BlockException e) {
         JsonResult<String> result = new JsonResult<>(445, "BlockException限流");
         return result;
+    }
+
+    @GetMapping("getInfo/{id}")
+    public JsonResult<String> getInfo(@PathVariable("id") Long id) {
+        if (id > 3) {
+            throw new RuntimeException("没有该id");
+        }
+        return feignService.msbSql(id);
     }
 
 }
