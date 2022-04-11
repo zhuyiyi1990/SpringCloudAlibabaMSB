@@ -16,6 +16,13 @@ spring:
         port: 8719
       # 配置为false
       web-context-unify: false
+      datasource:
+        nacos:
+          nacos:
+            serverAddr: 192.168.248.101:8848
+            groupId: DEFAULT_GROUP
+            dataId: order-sentinel.json
+            ruleType: FLOW
 
 management:
   endpoints:
