@@ -17,4 +17,9 @@ public class DemoController {
         return "库存-1：" + serverPort;
     }
 
+    @GetMapping(value = "/custom")
+    public String customTest() {
+        return "网关配置测试~~costom";
+    }
+
 }
