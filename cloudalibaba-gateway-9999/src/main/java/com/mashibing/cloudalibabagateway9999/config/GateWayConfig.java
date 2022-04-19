@@ -2,10 +2,8 @@ package com.mashibing.cloudalibabagateway9999.config;
 
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class GateWayConfig {
 
     /*
@@ -13,7 +11,7 @@ public class GateWayConfig {
     当访问地址http://localhost:9999/msb/**
     就会转发到http://localhost:9001/nacos-provider/msb/任何地址
     */
-    @Bean
+//    @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder routeLocatorBuilder) {
         // 构建多个路由routes
         RouteLocatorBuilder.Builder routes = routeLocatorBuilder.routes();
