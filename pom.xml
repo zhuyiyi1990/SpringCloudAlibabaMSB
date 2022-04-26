@@ -59,6 +59,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.1.20</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -74,7 +84,8 @@
         <module>cloudalibaba-provider-9003</module>
         <module>cloudalibaba-provider-9004</module>
         <module>cloudalibaba-gateway-9999</module>
+        <module>cloudalibaba-order-8801</module>
+        <module>cloudalibaba-stock-8802</module>
     </modules>
-
 
 </project>
