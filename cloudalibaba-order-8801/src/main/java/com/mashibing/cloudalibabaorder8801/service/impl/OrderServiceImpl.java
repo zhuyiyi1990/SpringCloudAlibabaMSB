@@ -3,6 +3,7 @@ package com.mashibing.cloudalibabaorder8801.service.impl;
 import com.mashibing.cloudalibabaorder8801.client.StockClient;
 import com.mashibing.cloudalibabaorder8801.mapper.OrderMapper;
 import com.mashibing.cloudalibabaorder8801.service.OrderService;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,6 +17,7 @@ public class OrderServiceImpl implements OrderService {
     @Resource
     private StockClient stockClient;
 
+    @GlobalTransactional// 开启分布式事务
     @Override
     public void create() {
         // 减库存
